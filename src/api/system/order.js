@@ -1,0 +1,61 @@
+import request from '@/utils/request'
+
+//查询订单信息列表
+export function listOrder(query) {
+  return request({
+    url: '/system/order/list',
+    method: 'get',
+    params: query
+  })
+}
+
+// 上传检测报告和查看检测报告信息列表
+export function listOrderReport(query) {
+  return request({
+    url: '/system/order/listForReport',
+    method: 'get',
+    params: query
+  })
+}
+// 上传专家建议和查看专家建议信息列表
+export function listOrderAdvice(query) {
+  return request({
+    url: '/system/order/listForAdvice',
+    method: 'get',
+    params: query
+  })
+}
+
+// 查询订单信息详细
+export function getOrder(id) {
+  return request({
+    url: '/system/order/' + id,
+    method: 'get'
+  })
+}
+
+// 新增订单信息
+export function addOrder(data) {
+  return request({
+    url: '/system/order',
+    method: 'post',
+    data: data
+  })
+}
+
+// 修改订单信息
+export function updateOrder(data) {
+  return request({
+    url: '/system/order',
+    method: 'put',
+    data: data
+  })
+}
+
+// 删除订单信息
+export function delOrder(id) {
+  return request({
+    url: '/system/order/' + id,
+    method: 'delete'
+  })
+}
